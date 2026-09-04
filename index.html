@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قرمزي - أفضل موقع مسلسلات تركية مترجمة HD 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>قرمزي - أفضل موقع مسلسلات تركية</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #141414; color: white; font-family: 'Cairo', sans-serif; }
+        body { background: #0a0a0a; color: white; font-family: 'Cairo', sans-serif; margin: 0; }
+        header { background: #e50914; padding: 15px; text-align: center; }
+       .logo { font-size: 30px; font-weight: bold; }
+       .search-box { padding: 20px; text-align: center; }
+        #searchInput { width: 80%; padding: 12px; border-radius: 25px; border: none; font-size: 16px; }
+       .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; gap: 20px; }
+       .card {
+            background: #1a1a1a; width: 200px; border-radius: 10px; overflow: hidden;
+            cursor: pointer; transition: 0.3s; border: 2px solid transparent;
+        }
+       .card:hover { transform: scale(1.05); border: 2px solid #e50914; }
+       .card img { width: 100%; height: 280px; object-fit: cover; }
+       .card h3 { padding: 10px; margin: 0; font-size: 16px; }
+       .btn { background: #e50914; color: white; padding: 10px; border: none; width: 100%; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
 
-        header { background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%); padding: 20px 4%; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .logo { font-size: 35px; font-weight: 900; color: #e50914
+<header>
+    <div class="logo">قرمزي KIRMIZI</div>
+</header>
+
+<div class="search-box">
+    <input type="text" id="searchInput" onkeyup="searchSeries()" placeholder="ابحث عن اسم المسلسل...">
+</div>
+
+<div class="container" id="seriesContainer">
+
+    <!-- مسلسل 1 -->
+    <div class="card">
+        <img src="https://i.imgur.com/8KmNp1b.jpg" alt="قرمزي">
+        <h3>قرمزي</h3>
+        <button class="btn" onclick="goToOffer()">مشاهدة الآن</button>
+    </div>
+
+    <!-- مسلسل 2 -->
+    <div class="card">
+        <img src="https://i.imgur.com/xyz.jpg" alt="المنظمة">
+        <h3>المنظمة</h3>
+        <button class="btn" onclick="goToOffer()">مشاهدة الآن</button>
+    </div>
+
+    <!-- مسلسل 3 -->
+    <div class="card">
+        <img src="https://i.imgur.com/abc.jpg" alt="عثمان">
+        <h3>المؤسس عثمان</h3>
+        <button class="btn" onclick="goToOffer()">مشاهدة الآن</button>
+    </div>
+
+</div>
+
+<script>
+  // 1. حط رابط OSN ديالك هنا
+  const AFFILIATE_LINK = ;https://www.profitableratecpmnetwork.com/serwatsfx?key=ea6c395bb5a485f598a228d73d08473e
+
+  function goToOffer() {
+    window.open(AFFILIATE_LINK, '_blank');
+  }
+
+  // 2. خاصية البحث
+  function searchSeries() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+      let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+      if (title.includes(input)) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
